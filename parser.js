@@ -16,6 +16,8 @@ module.exports = async function (id, page = 1) {
   if (res.statusCode == 200) {
     $('div.comment[id^="comment-"]').each(function() {
       // `this` is the div
+      const name = this.find(".info").find(".name").text()
+      const content = this.find(".info").find(".content").text()
     });
   } else {
     throw new Error("A network error occured.");
